@@ -49,6 +49,7 @@ void main() {
 
 	// to display changes, take for loop from up above
 
+	cout << " " << endl;
 
 	//List Stores data in RAM at random locations where it can fit stuff
 	list<Student> l;
@@ -65,6 +66,50 @@ void main() {
 	}
 	l.pop_back();
 	l.pop_front();
+
+	for (Student s : l)
+	{
+		cout << s.name << " " << s.studentID << endl;
+		// s is a copy of things from the list
+		// value in l via s
+	}
+
+	cout << " " << endl;
+
+	//QUEUE
+	//FIFO - First in First out
+	queue<Student> studentQueue;
+	cout << "Queue" << endl;
+	// add to the queue (can only add to the back)
+	studentQueue.push(Student("Mary", 1111));
+	studentQueue.push(Student("God", 1441));
+	studentQueue.push(Student("Harry", 1331));
+	cout << "processing queue" << endl;
+
+	while(studentQueue.size() > 0) {
+		cout << "Processing Student: " << studentQueue.front().name << endl;
+		studentQueue.pop(); // removes student at front
+
+	}
+	cout << " " << endl;
+
+	//STACK
+	// FILO - first in last out
+	stack<string> colourStack;
+	colourStack.push("Yellow");
+	colourStack.push("pink");
+	colourStack.push("Blue");
+	colourStack.push("Green");
+	colourStack.push("Red");
+
+	cout << "Stacked Colours" << endl;
+	while (colourStack.size() > 0)
+	{
+		cout << colourStack.top() << endl;
+		colourStack.pop();
+
+	}
+
 
 
 	system("pause");
